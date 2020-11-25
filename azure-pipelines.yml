@@ -38,6 +38,11 @@ steps:
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)\ArtifactsToBePublished'
 
+- task: ArchiveFiles@2
+  displayName: 'Archive $(build.artifactstagingdirectory)'
+  inputs:
+    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
+
 - task: AzureRmWebAppDeployment@3
   displayName: 'Deploy Azure App Service'
   inputs:
