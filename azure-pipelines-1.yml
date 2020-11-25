@@ -45,13 +45,3 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)\ArtifactsToBePublished'
 
 
-
-- task: AzureRmWebAppDeployment@3
-  displayName: 'Deploy Azure App Service'
-  inputs:
-    azureSubscription: 'sampleappss - Azure'
-    appType: applinux
-    WebAppName: sampleappss
-    ImageSource: Builtin
-    RuntimeStack: 'NODE|10.1'
-    StartupCommand: 'npm start'
