@@ -42,11 +42,11 @@ steps:
 - task: AzureRmWebAppDeployment@4
   inputs:
     ConnectionType: 'AzureRM'
-    azureSubscription: 'Free Trial(de41a4b5-07b4-4eff-ba63-33c5643b5f9a)'
+    azureSubscription: 'sampleapps - Azure'
     appType: 'webAppLinux'
     WebAppName: 'sampleappss'
     deployToSlotOrASE: true
     ResourceGroupName: 'SampleApp-rg'
     SlotName: 'production'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     StartupCommand: 'npm start'
